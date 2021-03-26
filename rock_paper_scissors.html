@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <head></head>
+
+        <h1>Test</h1>
+
+        
+        <script>
+
+// VERSION 1 LESS NESTING
+
+// Play Round
+// Player play
+function playerPlay() {
+    let testing = 0;
+    while (testing == 0)
+    
+    {
+       let choice = prompt('Rock, Paper, Scissors')
+     if (choice.toLowerCase() == 'rock' || choice.toLowerCase() == 'paper' || choice.toLowerCase() == 'scissors') {
+         return choice.toLowerCase()
+       testing = 1;
+     }
+     else  {
+         
+        }
+     }
+    }
+
+
+// Computer play
+function computerPlay() {
+        let choices = ['rock', 'paper', 'scissors']
+        return choices[Math.floor(Math.random() * choices.length)];
+    }
+
+
+
+// Determine winner
+function playRound(playerSelection, computerSelection) {
+
+let win_msg = ('You win! ' + playerSelection[0].toUpperCase() + playerSelection.substring(1) + ' beats ' + computerSelection[0].toUpperCase() + computerSelection.substring(1))   
+let lose_msg = ('You lose! ' + computerSelection[0].toUpperCase() + computerSelection.substring(1) + ' beats ' + playerSelection[0].toUpperCase() + playerSelection.substring(1))
+
+
+
+    // Rock
+if (playerSelection == 'rock' && computerSelection == 'paper'){
+alert(lose_msg)};
+
+
+if (playerSelection == 'rock' && computerSelection == 'scissors'){
+    alert(win_msg)};
+    // Paper
+if (playerSelection == 'paper' && computerSelection == 'rock'){
+     alert(win_msg)};
+
+if (playerSelection == 'paper' && computerSelection == 'scissors'){
+     alert(lose_msg)};
+    
+    // Scissors
+if (playerSelection == 'scissors' && computerSelection == 'rock'){
+      alert(lose_msg)};
+
+if (playerSelection == 'scissors' && computerSelection == 'paper'){
+     alert(win_msg)};
+   // Same choice
+if (playerSelection === computerSelection) {
+    alert('You both picked ' + playerSelection + ' choose again!')
+playerSelection = playerPlay()
+computerSelection = computerPlay()
+redo()
+}
+function redo() {
+ return playRound(playerSelection,computerSelection)
+}
+
+
+
+}
+
+  
+
+
+
+let playerSelection = playerPlay();
+let computerSelection = computerPlay();
+playRound(playerSelection, computerSelection);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
